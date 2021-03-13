@@ -8,7 +8,7 @@ This fork is deployed via Dokku for a personal version of the service.
 Setup
 -----
 
-1. git remote add dokku dokku@dokku.youngram.com:gpodder
+1. git remote add dokku dokku@my-dokku-host.com:gpodder
 2. dokku apps:create gpodder
 3. dokku plugin:install https://github.com/dokku/dokku-postgres.git
 4. dokku postgres:create gpodder
@@ -16,11 +16,11 @@ Setup
 6. dokku config:set gpodder SECRET_KEY=my-secret-key
 7. dokku storage:mount gpodder /var/log/gpodder-gunicorn:/var/log/gunicorn
 8. git push dokku master
-9. dokku domains:set gpodder podcasts.youngram.com
+9. dokku domains:set gpodder my-gpodder-site.com
 10. dokku domains:report gpodder
 11. dokku run gpodder python manage.py migrate
 12. dokku run gpodder python manage.py createsuperuser
-13. dokku config:set --no-restart gpodder DOKKU_LETSENCRYPT_EMAIL=ian@iangreenleaf.com
+13. dokku config:set --no-restart gpodder DOKKU_LETSENCRYPT_EMAIL=me@my-email.com
 14. dokku letsencrypt gpodder
 
 

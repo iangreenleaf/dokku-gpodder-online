@@ -1,8 +1,16 @@
 {
   "cron": [
     {
+      "command": "python manage.py update-toplist",
+      "schedule": "@daily"
+    },
+    {
+      "command": "python manage.py update-episode-toplist",
+      "schedule": "@daily"
+    },
+    {
       "command": "python manage.py feed-downloader",
-      "schedule": "20 * * * *"
+      "schedule": "0 */1 * * *"
     }
   ]
 }

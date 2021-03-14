@@ -52,7 +52,7 @@ class PodcastCommand(BaseCommand):
             help="Podcasts that are due to be updated next",
         ),
 
-        parser.add_argument("urls", nargs="+", type=str)
+        parser.add_argument("urls", nargs="*", type=str)
 
     def get_podcasts(self, *args, **options):
         return chain.from_iterable(self._get_podcasts(*args, **options))

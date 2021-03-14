@@ -2,7 +2,7 @@
   "cron": [
     {
       "command": "python manage.py feed-downloader",
-      "schedule": "35 * * * *"
+      "schedule": "20 * * * *"
     }
   ]
 }

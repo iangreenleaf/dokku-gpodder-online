@@ -11,10 +11,14 @@ Setup
 1. git remote add dokku dokku@my-dokku-host.com:gpodder
 1. dokku apps:create gpodder
 1. dokku plugin:install https://github.com/dokku/dokku-postgres.git
+1. dokku plugin:install https://github.com/dokku/dokku-redis.git redis
 1. dokku postgres:create gpodder
 1. dokku postgres:link gpodder gpodder
+1. dokku redis:create gpodder
+1. dokku redis:link gpodder gpodder
 1. dokku config:set gpodder SECRET_KEY=my-secret-key
 1. dokku config:set gpodder DEFAULT_BASE_URL=https://my-gpodder-site.com
+1. dokku config:set gpodder BROKER_URL=$(dokku config:get gpodder REDIS_URL)
 1. dokku storage:mount gpodder /var/log/gpodder-gunicorn:/var/log/gunicorn
 1. dokku storage:mount gpodder /var/lib/dokku/data/storage/gpodder/staticfiles:/app/staticfiles
 1. git push dokku master

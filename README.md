@@ -31,11 +31,15 @@ Dokku setup
 1. dokku letsencrypt gpodder
 1. dokku ps:scale gpodder web=1 beat=1 celery=1
 
-
 License
 -------
 mygpo is licensed under the GNU Affero General Public License Version 3. See file [COPYING](COPYING) for details.
 
+
+Feedback
+--------
+
+There might be more convenient or efficient ways to set some of this up in Dokku. If you have improvements, please suggest them!
 
 Additional Info
 ----

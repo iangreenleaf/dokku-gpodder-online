@@ -26,7 +26,8 @@ Setup
 1. dokku domains:report gpodder
 1. dokku run gpodder python manage.py migrate
 1. dokku run gpodder python manage.py createsuperuser
-1. dokku config:set --no-restart gpodder DOKKU_LETSENCRYPT_EMAIL=me@my-email.com
+1. dokku config:set gpodder DOKKU_LETSENCRYPT_EMAIL=me@my-email.com
+1. Either set [SMTP settings](https://docs.djangoproject.com/en/3.1/topics/email/) or if you don't need public registration, log them to console: dokku config:set gpodder EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 1. dokku letsencrypt gpodder
 1. dokku ps:scale gpodder web=1 beat=1 celery=1
 
